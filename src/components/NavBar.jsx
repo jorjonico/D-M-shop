@@ -8,9 +8,9 @@ function BasicExample() {
         <Container>
             <Navbar.Brand href="#home">
                 <img
-                    src="/logo_sport.png"
-                    width="30"
-                    height="30"
+                    src="/logo02.png"
+                    width="40"
+                    height="40"
                     className="d-inline-block align-top"
                     alt=""
                 />
