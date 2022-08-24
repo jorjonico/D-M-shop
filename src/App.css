@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.logo{
+  color: rgb(185, 20, 20);
+  font-size: 20px;
+  padding-right: 2rem;
+}
