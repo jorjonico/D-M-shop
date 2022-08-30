@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Cart3 } from 'react-bootstrap-icons';
 import Badge from "react-bootstrap/Badge";
-
 import Button from 'react-bootstrap/Button';
 const CartWidget = () => {
     return (
@@ -11,5 +10,4 @@ const CartWidget = () => {
         </Button>
     );
 }
-
 export default CartWidget;
