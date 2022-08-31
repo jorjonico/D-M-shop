@@ -6,6 +6,7 @@ const ItemListContainer = ({greeting}) => {
             alert(`Usted a cargado ${ItemCount.number} productos al carrito`)
         }
     }
+    
     return (
         <>
         <h4 className="p-5">{greeting}</h4>
