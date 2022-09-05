@@ -2,6 +2,8 @@ import { React, useEffect, useState } from "react";
 import ItemCount from "./ItemCount";
 import productos from "../data/productos";
 import ItemList from "./ItemList";
+import {Container, Row } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function getProductos() {
     return new Promise ((resolve, reject) => {
@@ -30,7 +32,11 @@ const ItemListContainer = ({greeting}) => {
         stock={5} 
         initial={1} 
         onAdd={onAdd}/>
-        <ItemList productos={producto} />
+        <Container className="mt-5">
+            <Row className="g-4">
+                <ItemList productos={producto} />
+            </Row>
+        </Container>
         </>
         
     );
