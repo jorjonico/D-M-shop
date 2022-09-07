@@ -166,7 +166,7 @@ const productos = [
         "edad": "Adultos",
         "color": "amarillo",
         "precio": 950,
-        "stock": 50,
+        "stock": 7,
         "imagen": "img/amarillo.webp"
     },
     {
