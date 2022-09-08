@@ -20,7 +20,9 @@ const ItemDetailContainer = () => {
     }, []);
 
     return (
-        <><ItemDetail produc={produc} /></>
+        <div className="container">
+        <div className="row justify-content-md-center"><ItemDetail produc={produc} /></div>
+        </div>
     );
 }
 export default ItemDetailContainer 

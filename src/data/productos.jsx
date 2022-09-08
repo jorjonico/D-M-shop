@@ -162,6 +162,7 @@ const productos = [
     {
         "id": 17,
         "nombre": "Jaguar",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper lacus eu pellentesque condimentum.",
         "genero": "Hombre",
         "edad": "Adultos",
         "color": "amarillo",
