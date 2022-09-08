@@ -1,5 +1,4 @@
 import { React, useEffect, useState } from "react";
-import ItemCount from "./ItemCount";
 import productos from "../data/productos";
 import ItemList from "./ItemList";
 import {Container, Row } from 'react-bootstrap';
@@ -12,12 +11,7 @@ function getProductos() {
         }, 2000);
     })
 }
-const ItemListContainer = ({greeting}) => {
-    let onAdd = () =>{
-        if (ItemCount.number !== 0) {
-            alert(`Usted a cargado ${ItemCount.number} productos al carrito`)
-        }
-    }
+const ItemListContainer = () => {
     const [producto, setProducto] = useState([]);
     useEffect( () =>{
         getProductos().then( respuestaPromesa => {
@@ -27,11 +21,6 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <>
-        <h4 className="p-5">{greeting}</h4>
-        <ItemCount 
-        stock={5} 
-        initial={1} 
-        onAdd={onAdd}/>
         <Container className="mt-5">
             <Row className="g-4">
                 <ItemList productos={producto} />
