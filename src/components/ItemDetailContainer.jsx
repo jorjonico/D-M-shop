@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from "react";
 import productos from "../data/productos";
 import ItemDetail from "./ItemDetail";
-/* import {Container, Row } from 'react-bootstrap'; */
 import 'bootstrap/dist/css/bootstrap.css';
 
 function getProduc() {
