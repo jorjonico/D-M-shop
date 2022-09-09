@@ -3,37 +3,42 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 function BasicExample() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
-          <img
-            src="/logo02.png"
-            width="40"
-            height="40"
-            className="d-inline-block align-top"
-            alt=""
-          />
-        </Navbar.Brand>
-        <Navbar.Brand href="#home" className="logo">
-          D&M Odotntólogos
-        </Navbar.Brand>
+        <Link to='/'>
+          <Navbar.Brand>
+            <img
+              src="/logo02.png"
+              width="40"
+              height="40"
+              className="d-inline-block align-top"
+              alt=""
+            />
+          </Navbar.Brand>
+        </Link>
+        <Link to='/'>
+          <Navbar.Brand className="logo">
+            D&M Odotntólogos
+          </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#link">Nosotros</Nav.Link>
-            <Nav.Link href="#link">Catálogo</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+            <Nav.Link as={Link} to='/'>Catálogo</Nav.Link>
+            <Nav.Link as={Link} to='/category/oferta'>Ofertas</Nav.Link>
+            <NavDropdown title="Colores" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to='/color/negro'>Negro</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/color/rojo'>Rojo</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/color/azul'>Azul</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/color/rosa'>Rosa</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/color/verde'>Verde</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/color/violeta'>Violeta</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/color/celeste'>Celeste</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/color/amarillo'>Amarillo</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/color/gris'>Gris</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
