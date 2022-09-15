@@ -3,14 +3,21 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css';
 import ItemCount from "./ItemCount";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 function ItemDetail({imagen, nombre, descripcion, edad, genero, stock, precio, color}) {
-    let onAdd = () =>{
+    /*     let onAdd = () =>{
         if (ItemCount.number !== 0) {
             alert(`Usted a cargado ${ItemCount.number} productos al carrito`)
         }
+    } */
+    const [enCarrito, setEnCarrito] = useState(false);
+    function onAdd(agregar){
+        alert(`Usted a cargado ${agregar} productos al carrito`);
+        setEnCarrito(true);
     }
-
     return(
         <div className="card mb-3 mt-5" style={{ width: '800px' }}>
             <div className="row g-0">
@@ -27,10 +34,13 @@ function ItemDetail({imagen, nombre, descripcion, edad, genero, stock, precio, c
                     <h5 className="mt-2">Precio: ${precio}</h5>
                     </ListGroup>
                 </div>
+                {enCarrito? 
+                <Button variant="danger" size="sm" className='m-2' as={Link} to={`/cart`}>Ver Carrito</Button>
+                :
                 <ItemCount className="" 
                     stock={stock} 
                     initial={1} 
-                    onAdd={onAdd}/>
+                    onAdd={onAdd}/>}
                 </div>
             </div>
             </div>
