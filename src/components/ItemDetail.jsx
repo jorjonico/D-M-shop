@@ -16,10 +16,10 @@ function ItemDetail({imagen, nombre, descripcion, edad, genero, stock, precio, c
     } */
     const [enCarrito, setEnCarrito] = useState(false);
     const {addItem} = useContext(CartContext);
-    function onAdd(agregar){
-        alert(`Usted a cargado ${agregar} productos al carrito`);
+    function onAdd(qty){
+        alert(`Usted a cargado ${qty} ${nombre} | color:${color} | $${precio} c/u`);
         setEnCarrito(true);
-        addItem({imagen, nombre, descripcion, edad, genero, stock, precio, color})
+        addItem({imagen, nombre, descripcion, edad, genero, stock, precio, color, qty})
     }
     return(
         <div className="card mb-3 mt-5" style={{ width: '800px' }}>
