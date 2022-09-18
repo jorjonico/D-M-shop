@@ -3,9 +3,10 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css';
 import ItemCount from "./ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import { CartContext } from './CartContext';
 
 function ItemDetail({imagen, nombre, descripcion, edad, genero, stock, precio, color}) {
     /*     let onAdd = () =>{
@@ -14,9 +15,11 @@ function ItemDetail({imagen, nombre, descripcion, edad, genero, stock, precio, c
         }
     } */
     const [enCarrito, setEnCarrito] = useState(false);
+    const {addItem} = useContext(CartContext);
     function onAdd(agregar){
         alert(`Usted a cargado ${agregar} productos al carrito`);
         setEnCarrito(true);
+        addItem({imagen, nombre, descripcion, edad, genero, stock, precio, color})
     }
     return(
         <div className="card mb-3 mt-5" style={{ width: '800px' }}>
