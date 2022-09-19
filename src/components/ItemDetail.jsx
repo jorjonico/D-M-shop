@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import { CartContext } from './CartContext';
 
-function ItemDetail({imagen, nombre, descripcion, edad, genero, stock, precio, color}) {
+function ItemDetail({id, imagen, nombre, descripcion, edad, genero, stock, precio, color}) {
     /*     let onAdd = () =>{
         if (ItemCount.number !== 0) {
             alert(`Usted a cargado ${ItemCount.number} productos al carrito`)
@@ -19,7 +19,7 @@ function ItemDetail({imagen, nombre, descripcion, edad, genero, stock, precio, c
     function onAdd(qty){
         alert(`Usted a cargado ${qty} ${nombre} | color:${color} | $${precio} c/u`);
         setEnCarrito(true);
-        addItem({imagen, nombre, descripcion, edad, genero, stock, precio, color, qty})
+        addItem({id, imagen, nombre, descripcion, edad, genero, stock, precio, color, qty})
     }
     return(
         <div className="card mb-3 mt-5" style={{ width: '800px' }}>
@@ -38,7 +38,7 @@ function ItemDetail({imagen, nombre, descripcion, edad, genero, stock, precio, c
                     </ListGroup>
                 </div>
                 {enCarrito? 
-                <Button variant="danger" size="sm" className='m-2' as={Link} to={`/cart`}>Ver Carrito</Button>
+                <div><Button variant="danger" size="sm" className='m-2' as={Link} to={`/cart`}>Ver Carrito</Button><Button variant="dark" size="sm" className='m-2' as={Link} to={`/`}>Seguir comprando</Button></div>
                 :
                 <ItemCount className="" 
                     stock={stock} 
