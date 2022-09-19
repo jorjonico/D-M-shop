@@ -9,11 +9,6 @@ import Button from 'react-bootstrap/Button';
 import { CartContext } from './CartContext';
 
 function ItemDetail({id, imagen, nombre, descripcion, edad, genero, stock, precio, color}) {
-    /*     let onAdd = () =>{
-        if (ItemCount.number !== 0) {
-            alert(`Usted a cargado ${ItemCount.number} productos al carrito`)
-        }
-    } */
     const [enCarrito, setEnCarrito] = useState(false);
     const {addItem} = useContext(CartContext);
     function onAdd(qty){
