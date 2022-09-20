@@ -6,9 +6,26 @@ export const CartContext = createContext();
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
+    const isInCart = id => cartList.some(product => product.id === id);
 
-    const addItem = (product, qty) =>{
-        setCartList([...cartList, product])
+    const addItem = (product) =>{
+
+        if(isInCart(product.id)){
+            const newCartList = cartList.map(cartElement =>{
+                if(cartElement.id === product.id){
+                    const copyItem = {...cartElement};
+                    copyItem.qty += product.qty;
+                    return copyItem;
+                }
+                else
+                    return cartElement;
+            })
+            setCartList(newCartList);
+        }
+        else{
+            const newProduct = {...product};
+            setCartList([...cartList, newProduct]);
+        }
     }
 
     const removeItem = (itemId) =>{
