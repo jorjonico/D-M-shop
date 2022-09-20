@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const CartWidget = () => {
     return (
         <Button variant="light" as={Link} to={`/cart`}>
-        <Cart3 className='card-ico'/> <Badge bg="danger">2</Badge>
+        <Cart3 className='card-ico'/> <Badge bg="danger">4</Badge>
         <span className="visually-hidden">unread messages</span>
         </Button>
     );
