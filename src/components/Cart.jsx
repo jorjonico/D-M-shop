@@ -8,7 +8,7 @@ const Cart = () => {
     const {cartList, clear, removeItem} = useContext(CartContext);
     return (
         <>
-        <h3 className='m-5 mt-4 mb-4'>Finalizar compra 🛒</h3>
+        <h3 className='m-5 mt-4 mb-4 justify-content-md-center'>Tu Carrito🎀</h3>
         <Button variant="dark" size="sm" className='m-5 mt-0 mb-4' onClick={clear}>Borrar carrito</Button>
         <Button variant="danger" size="sm" className='m-5 mt-0 mb-4' as={Link} to={`/`}>Seguir comprando</Button>
         <Table striped bordered hover className='m-5 mt-0'>

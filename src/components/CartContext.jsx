@@ -37,8 +37,13 @@ const CartContextProvider = ({children}) => {
         setCartList([])
     }
 
+    const calcItemCart = () =>{
+        let qtys = cartList.map(item => item.qty);
+        return qtys.reduce(((prevQty, newQty) => prevQty + newQty),0);
+    }
+
     return(
-        <CartContext.Provider value={{cartList, addItem, clear, removeItem}}>
+        <CartContext.Provider value={{cartList, addItem, clear, removeItem, calcItemCart}}>
             {children}
         </CartContext.Provider>
     );
