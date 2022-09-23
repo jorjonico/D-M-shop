@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import '../App.css';
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
@@ -24,6 +25,7 @@ const Cart = () => {
         <Table striped hover className='m-5 mt-0'>
             <thead>
                 <tr>
+                <th></th>
                 <th>Unidades</th>
                 <th>Nombre</th>
                 <th>Género</th>
@@ -34,6 +36,7 @@ const Cart = () => {
             </thead>
             <tbody>{cartList.map(({id, imagen, nombre, edad, genero, stock, precio, color, qty}) =>
                 <tr key={id}>
+                <td><img src={imagen} className="img-fluid rounded-start imgCart" alt="..."></img></td>
                 <td>{qty}</td>
                 <td>{nombre}</td>
                 <td>{genero}</td>
@@ -44,6 +47,7 @@ const Cart = () => {
             </tbody>
             <tbody>
                 <tr>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>

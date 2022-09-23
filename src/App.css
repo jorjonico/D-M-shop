@@ -53,3 +53,8 @@
   color: rgb(185, 20, 20);
   font-size: 25px;
 }
+
+.imgCart{
+  width: 70px;
+  mix-blend-mode: multiply;
+}
