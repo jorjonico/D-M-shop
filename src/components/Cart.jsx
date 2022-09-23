@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import { useContext } from 'react';
 import { CartContext } from './CartContext';
+import {Container, Row } from 'react-bootstrap';
+import Stack from 'react-bootstrap/Stack';
 /* import { RecordFill } from 'react-bootstrap-icons'; */
 const Cart = () => {
     const {cartList, clear, removeItem, totalToPay} = useContext(CartContext);
@@ -18,8 +20,8 @@ const Cart = () => {
         <>
         <div className='text-center'>
         <h3 className='m-5 mt-4 mb-4'>Tu Carrito🎀</h3>
-        <Button variant="danger" size="sm" className='m-5 mt-0 mb-4' as={Link} to={`/`}>Seguir comprando</Button></div>
-        <Table striped bordered hover className='m-5 mt-0'>
+        </div>
+        <Table striped hover className='m-5 mt-0'>
             <thead>
                 <tr>
                 <th>Unidades</th>
@@ -47,16 +49,21 @@ const Cart = () => {
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><strong>${totalToPay}</strong> Total a Pagar</td>
+                <td><strong><h5>${totalToPay}</h5></strong> Total a Pagar</td>
                 </tr>
             </tbody>
             </Table>
-            <Button variant="dark" size="sm" className='m-5 mt-0 mb-4' onClick={clear}>Borrar carrito</Button>
+            <Container>
+                <Row className="justify-content-md-center">
+                <Stack direction="horizontal" gap={2}>
+                <div className="bg-light ml-3"><Button variant="dark" size="sm" className='m-1' onClick={clear}>Borrar carrito</Button></div>
+                <div className="bg-light ms-auto"><Button variant="secondary" size="sm" className='m-1' as={Link} to={`/`}>Seguir comprando</Button></div>
+                <div className="vr" />
+                <div className="bg-light"><Button variant="danger" size="sm" className='m-1' as={Link} to={`/`}>Finalizar compra</Button></div>
+                </Stack>
+                </Row>
+            </Container>
         </>
     );
 }
 export default Cart;
-
-/*         <div className='p-2 bg-light border' >{
-            cartList.map((item) => <li key={item.id}><strong>{item.qty} unidades </strong> de protector {item.nombre} | color: {item.color} | precio <strong>${item.precio}</strong> c/u <Button variant="outline-dark" size="sm" className='m-1 mt-0' onClick={() =>removeItem(item.id)}>Borrar</Button></li>)
-        }</div> */
