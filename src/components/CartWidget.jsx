@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { CartContext } from './CartContext';
 const CartWidget = () => {
-    const { calcItemCart } = useContext(CartContext);
+    const { cartList, calcItemCart } = useContext(CartContext);
 
     return (
         <Button variant="light" as={Link} to={`/cart`}>
-        <Cart3 className='card-ico'/> <Badge bg="danger">{calcItemCart()}</Badge>
+        <Cart3 className='card-ico'/> <Badge bg="danger">{(cartList.length === 0) ? <></> : calcItemCart()}</Badge>
         <span className="visually-hidden">Carrito</span>
         </Button>
     );

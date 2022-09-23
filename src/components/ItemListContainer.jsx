@@ -24,7 +24,7 @@ function getProductosOferta(idCategory) {
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
             resolve (productos.filter(producto => producto.categoryId === idCategory))
-        }, 1000);
+        }, 500);
     })
 }
 const ItemListContainer = () => {
@@ -45,6 +45,7 @@ const ItemListContainer = () => {
             });
         }
     }, [idColor, idCategory]);
+
 
     return (
         <>

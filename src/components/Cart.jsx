@@ -49,7 +49,7 @@ const Cart = () => {
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><strong><h5>${totalToPay}</h5></strong> Total a Pagar</td>
+                <td>Total a Pagar<strong><h5>${totalToPay}</h5></strong></td>
                 </tr>
             </tbody>
             </Table>
