@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createContext } from "react";
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
+    const [totalToPay, settotalToPay] = useState([])
 
     const isInCart = id => cartList.some(product => product.id === id);
 
@@ -42,8 +43,12 @@ const CartContextProvider = ({children}) => {
         return qtys.reduce(((prevQty, newQty) => prevQty + newQty),0);
     }
 
+    useEffect(() =>{
+        settotalToPay(cartList.reduce((acc, item) => acc + item.qty * item.precio, 0));
+    },[cartList]);
+
     return(
-        <CartContext.Provider value={{cartList, addItem, clear, removeItem, calcItemCart}}>
+        <CartContext.Provider value={{cartList, addItem, clear, removeItem, calcItemCart, totalToPay}}>
             {children}
         </CartContext.Provider>
     );

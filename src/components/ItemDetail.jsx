@@ -7,6 +7,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import { CartContext } from './CartContext';
+import Spinner from 'react-bootstrap/Spinner';
 
 function ItemDetail({id, imagen, nombre, descripcion, edad, genero, stock, precio, color}) {
     const [enCarrito, setEnCarrito] = useState(false);
@@ -15,6 +16,9 @@ function ItemDetail({id, imagen, nombre, descripcion, edad, genero, stock, preci
         alert(`Usted a cargado ${qty} ${nombre} | color:${color} | $${precio} c/u`);
         setEnCarrito(true);
         addItem({id, imagen, nombre, descripcion, edad, genero, stock, precio, color, qty})
+    };
+    if(!imagen){
+        return <div className='m-5 text-center'><Spinner animation="border" variant="danger" /></div>
     }
     return(
         <div className="card mb-3 mt-5" style={{ width: '800px' }}>

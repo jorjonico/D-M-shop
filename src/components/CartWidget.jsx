@@ -10,7 +10,7 @@ const CartWidget = () => {
 
     return (
         <Button variant="light" as={Link} to={`/cart`}>
-        <Cart3 className='card-ico'/> <Badge bg="danger">{calcItemCart().length === 0 ? <></> : <>{calcItemCart()}</>}</Badge>
+        <Cart3 className='card-ico'/> <Badge bg="danger">{calcItemCart()}</Badge>
         <span className="visually-hidden">Carrito</span>
         </Button>
     );
