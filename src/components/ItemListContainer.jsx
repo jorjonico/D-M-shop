@@ -1,32 +1,12 @@
 import { React, useEffect, useState } from "react";
-import productos from "../data/productos";
 import ItemList from "./ItemList";
 import {Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import { useParams } from "react-router-dom";
+import {getAllItems as getProductos} from "../data";
+import { getItemColor as getProductosColor } from "../data";
+import { getItemOferta as getProductosOferta }  from "../data";
 
-function getProductos() {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve (productos);
-        }, 1000);
-    })
-}
-function getProductosColor(idColor) {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve (productos.filter(producto => producto.color === idColor))
-        }, 1000);
-    })
-}
-
-function getProductosOferta(idCategory) {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve (productos.filter(producto => producto.categoryId === idCategory))
-        }, 500);
-    })
-}
 const ItemListContainer = () => {
     const [producto, setProducto] = useState([]);
     const { idColor, idCategory } = useParams();
