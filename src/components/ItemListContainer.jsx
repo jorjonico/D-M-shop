@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import {getAllItems as getProductos} from "../data";
 import { getItemColor as getProductosColor } from "../data";
 import { getItemOferta as getProductosOferta }  from "../data";
+import Spinner from 'react-bootstrap/Spinner';
 
 const ItemListContainer = () => {
     const [producto, setProducto] = useState([]);
@@ -26,12 +27,11 @@ const ItemListContainer = () => {
         }
     }, [idColor, idCategory]);
 
-
     return (
         <>
         <Container className="mt-5">
             <Row className="g-4">
-                <ItemList productos={producto} />
+                {(producto.length === 0) ? <div className='m-5 text-center'><Spinner animation="border" variant="danger" /></div> : <ItemList productos={producto} />}
             </Row>
         </Container>
         </>
