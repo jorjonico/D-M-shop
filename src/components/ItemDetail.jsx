@@ -37,7 +37,7 @@ function ItemDetail({id, imagen, nombre, descripcion, edad, genero, stock, preci
                     </ListGroup>
                 </div>
                 {enCarrito? 
-                <div><Button variant="danger" size="sm" className='m-2' as={Link} to={`/cart`}>Ver Carrito</Button><Button variant="dark" size="sm" className='m-2' as={Link} to={`/`}>Seguir comprando</Button></div>
+                <div><Button variant="outline-info" size="sm" className='m-2' as={Link} to={`/cart`}>Ver Carrito</Button><Button variant="dark" size="sm" className='m-2' as={Link} to={`/`}>Seguir comprando</Button></div>
                 :
                 <ItemCount className="" 
                     stock={stock} 

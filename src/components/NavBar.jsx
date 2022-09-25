@@ -11,17 +11,11 @@ function BasicExample() {
         <Link to='/'>
           <Navbar.Brand>
             <img
-              src="/logo02.png"
-              width="40"
-              height="40"
+              src="/logo_final.png"
+              height="50"
               className="d-inline-block align-top"
               alt=""
             />
-          </Navbar.Brand>
-        </Link>
-        <Link to='/'>
-          <Navbar.Brand className="logo">
-            D&M Odotntólogos
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
