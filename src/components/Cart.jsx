@@ -20,7 +20,7 @@ const Cart = () => {
     return (
         <>
         <div className='text-center'>
-        <h3 className='m-5 mt-4 mb-4'>Tu Carrito🎀</h3>
+        <h3 className='m-5 mt-4 mb-4 text-secondary'>Tu Carrito🎀</h3>
         </div>
         <Table striped hover className='m-5 mt-0'>
             <thead>
