@@ -17,6 +17,14 @@ const Cart = () => {
             <Button variant="info" size="sm" className='m-5 mt-0 mb-4 text-white' as={Link} to={`/`}>Seguir comprando</Button>
         </div>
     }
+
+    const createOrder = () =>{
+        console.log("creteOrder")
+        let order = {
+
+        }
+    }
+
     return (
         <>
         <div className='text-center'>
@@ -63,7 +71,7 @@ const Cart = () => {
                 <div className="bg-light ml-3"><Button variant="dark" size="sm" className='m-1' onClick={clear}>Borrar carrito</Button></div>
                 <div className="bg-light ms-auto"><Button variant="secondary" size="sm" className='m-1' as={Link} to={`/`}>Seguir comprando</Button></div>
                 <div className="vr" />
-                <div className="bg-light"><Button variant="outline-info" size="sm" className='m-1' as={Link} to={`/`}>Finalizar compra</Button></div>
+                <div className="bg-light"><Button variant="outline-info" size="sm" className='m-1' onClick={createOrder}>Finalizar compra</Button></div>
                 </Stack>
                 </Row>
             </Container>
