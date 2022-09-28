@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import {Container, Row } from 'react-bootstrap';
 import Stack from 'react-bootstrap/Stack';
-import { serverTimestamp, doc, setDoc } from "firebase/firestore";
+import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from "firebase/firestore";
 import firestoreDB from "../data";
 const Cart = () => {
     const {cartList, clear, removeItem, totalToPay} = useContext(CartContext);
@@ -30,7 +30,17 @@ const Cart = () => {
             total: totalToPay,
         }
         /* console.log(order) */
-        await setDoc(doc(firestoreDB, "orders", "new-order-id"), order);
+        const newOrderRef = doc(collection(firestoreDB, "orders"))
+        await setDoc(newOrderRef, order);
+        alert('Su pedido fue enviado con el ID: ' + newOrderRef.id)
+        clear()
+
+        itemsForDB.map(async (item) => {
+            const itemRef = doc(firestoreDB, "products", item.id);
+            await updateDoc(itemRef, {
+                stock: increment(-item.quantity)
+            });
+        })
     }
 
     if(cartList.length === 0){
