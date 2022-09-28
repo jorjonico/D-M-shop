@@ -7,9 +7,31 @@ import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import {Container, Row } from 'react-bootstrap';
 import Stack from 'react-bootstrap/Stack';
-/* import { RecordFill } from 'react-bootstrap-icons'; */
+import { serverTimestamp, doc, setDoc } from "firebase/firestore";
+import firestoreDB from "../data";
 const Cart = () => {
     const {cartList, clear, removeItem, totalToPay} = useContext(CartContext);
+
+    const createOrder = async () =>{
+        let itemsForDB = cartList.map(item => ({
+            id: item.id,
+            title: item.nombre,
+            price: item.precio,
+            quantity: item.qty,
+        }))
+        let order = {
+            buyer:{
+                name:"Emiliano Martinez",
+                email:"emiliano@martinez.com",
+                phone:"156115555",
+            },
+            date: serverTimestamp(),
+            items: itemsForDB,
+            total: totalToPay,
+        }
+        /* console.log(order) */
+        await setDoc(doc(firestoreDB, "orders", "new-order-id"), order);
+    }
 
     if(cartList.length === 0){
         return <div className='text-center'>
@@ -17,14 +39,6 @@ const Cart = () => {
             <Button variant="info" size="sm" className='m-5 mt-0 mb-4 text-white' as={Link} to={`/`}>Seguir comprando</Button>
         </div>
     }
-
-    const createOrder = () =>{
-        console.log("creteOrder")
-        let order = {
-
-        }
-    }
-
     return (
         <>
         <div className='text-center'>
