@@ -13,7 +13,6 @@ const ItemDetailContainer = () => {
             setProduc(respuesta)
         })
     }, [id]);
-    console.log(produc)
     return (
         <div className="container">
         <div className="row justify-content-md-center"><ItemDetail {...produc} /></div>

@@ -8,12 +8,22 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import { CartContext } from './CartContext';
 import Spinner from 'react-bootstrap/Spinner';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ItemDetail({id, imagen, nombre, descripcion, edad, genero, stock, precio, color}) {
     const [enCarrito, setEnCarrito] = useState(false);
     const {addItem} = useContext(CartContext);
     function onAdd(qty){
-        alert(`Usted a cargado ${qty} ${nombre} | color:${color} | $${precio} c/u`);
+        toast.success(`Cargando ${qty} ${nombre} al 🛒`, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
         setEnCarrito(true);
         addItem({id, imagen, nombre, descripcion, edad, genero, stock, precio, color, qty})
     };
@@ -44,6 +54,7 @@ function ItemDetail({id, imagen, nombre, descripcion, edad, genero, stock, preci
                     initial={1} 
                     onAdd={onAdd}/>}
                 </div>
+                <ToastContainer />
             </div>
             </div>
     )
