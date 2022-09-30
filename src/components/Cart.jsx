@@ -9,6 +9,10 @@ import {Container, Row } from 'react-bootstrap';
 import Stack from 'react-bootstrap/Stack';
 import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from "firebase/firestore";
 import firestoreDB from "../data";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const Cart = () => {
     const {cartList, clear, removeItem, totalToPay} = useContext(CartContext);
 
@@ -32,8 +36,17 @@ const Cart = () => {
         /* console.log(order) */
         const newOrderRef = doc(collection(firestoreDB, "orders"))
         await setDoc(newOrderRef, order);
-        alert('Su pedido fue enviado con el ID: ' + newOrderRef.id)
-        clear()
+        toast.success('Pedido enviado', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            },);
+        /* alert('Su pedido fue enviado con el ID: ' + newOrderRef.id); */
+        clear();
 
         itemsForDB.map(async (item) => {
             const itemRef = doc(firestoreDB, "products", item.id);
@@ -95,7 +108,10 @@ const Cart = () => {
                 <div className="bg-light ml-3"><Button variant="dark" size="sm" className='m-1' onClick={clear}>Borrar carrito</Button></div>
                 <div className="bg-light ms-auto"><Button variant="secondary" size="sm" className='m-1' as={Link} to={`/`}>Seguir comprando</Button></div>
                 <div className="vr" />
-                <div className="bg-light"><Button variant="outline-info" size="sm" className='m-1' onClick={createOrder}>Finalizar compra</Button></div>
+                <div className="bg-light">
+                    <Button variant="outline-info" size="sm" className='m-1' onClick={createOrder}>Finalizar compra</Button>
+                    <ToastContainer />
+                </div>
                 </Stack>
                 </Row>
             </Container>
