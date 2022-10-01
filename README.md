@@ -1,6 +1,6 @@
-# Título del Proyecto
+# D&M Odontólogos
 
-_Acá va un párrafo que describa lo que es el proyecto_
+_Tienda del consultorio odontológico donde comercializa protectores bucales deportivos personalizados_
 
 ## Comenzando 🚀
 
