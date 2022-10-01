@@ -2,14 +2,14 @@
 
 Tienda del consultorio odontológico donde comercializa protectores bucales deportivos personalizados. 
 
-Las funcionalidades de la tienda incluyen visualizar el catalogo completo de productos, filtrado por colores(Negro, Amarillo, Rojo, Verde, Gris, Azul, Celeste, Violeta, Rosa) y por último las ofertas. Al seleccionar un producto podemos ver en detalle las características del mismo  
+Las funcionalidades de la tienda incluyen visualizar el catalogo completo de productos, filtrado por colores(Negro, Amarillo, Rojo, Verde, Gris, Azul, Celeste, Violeta, Rosa) y por último las ofertas. Al seleccionar un producto podemos ver en detalle las características del mismo, en esta instancia podemos seleccionar la cantidad de productos que queremos y enviarla al carrito
 
 ## Pre-requisitos
 Necesitas para instalar el software y ejecutarlo el [Visual Studio Code](https://code.visualstudio.com/).
 
 Copiar el link de repositorio y ejecutar el comando
 ```bash
-git clone link(link del repositorio)
+git clone (+ link del repositorio)
 ```
 
 ## Instalación
