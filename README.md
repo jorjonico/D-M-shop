@@ -1,5 +1,53 @@
 # D&M Odontólogos
 
+Tienda del consultorio odontológico donde comercializa protectores bucales deportivos personalizados. 
+
+Las funcionalidades de la tienda incluyen visualizar el catalogo completo de productos, filtrado por colores(Negro, Amarillo, Rojo, Verde, Gris, Azul, Celeste, Violeta, Rosa) y por último las ofertas. Al seleccionar un producto podemos ver en detalle las características del mismo  
+
+## Pre-requisitos
+Necesitas para instalar el software y ejecutarlo el [Visual Studio Code](https://code.visualstudio.com/).
+
+Copiar el link de repositorio y ejecutar el comando
+```bash
+git clone link(link del repositorio)
+```
+
+## Instalación
+
+Proyecto desarrollado en [React](https://reactjs.org/)
+
+Dependencias necesarias
+
+```bash
+pip install foobar
+```
+
+## Usage
+
+```python
+import foobar
+
+# returns 'words'
+foobar.pluralize('word')
+
+# returns 'geese'
+foobar.pluralize('goose')
+
+# returns 'phenomenon'
+foobar.singularize('phenomena')
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+# D&M Odontólogos
+
 _Tienda del consultorio odontológico donde comercializa protectores bucales deportivos personalizados_
 
 ## Comenzando 🚀
