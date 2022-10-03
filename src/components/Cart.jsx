@@ -12,7 +12,6 @@ import firestoreDB from "../data";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const Cart = () => {
     const {cartList, clear, removeItem, totalToPay} = useContext(CartContext);
 
@@ -33,8 +32,6 @@ const Cart = () => {
             items: itemsForDB,
             total: totalToPay,
         }
-        /* console.log(order) */
-        /* const newOrderRef = doc(collection(firestoreDB, "orders")) */
         addDoc((collection(firestoreDB, "orders")), order).then((resp) => {
             clear();
             toast.dark(`Pedido enviado N°: ${resp.id}`, {
@@ -47,7 +44,6 @@ const Cart = () => {
                 progress: undefined,
             });
         });
-        /* alert('Su pedido fue enviado con el ID: ' + newOrderRef.id); */
 
         itemsForDB.map(async (item) => {
             const itemRef = doc(firestoreDB, "products", item.id);
