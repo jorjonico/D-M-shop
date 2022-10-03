@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import {Container, Row } from 'react-bootstrap';
 import Stack from 'react-bootstrap/Stack';
-import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from "firebase/firestore";
+import { serverTimestamp, doc, addDoc, collection, updateDoc, increment } from "firebase/firestore";
 import firestoreDB from "../data";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,13 +16,13 @@ import 'react-toastify/dist/ReactToastify.css';
 const Cart = () => {
     const {cartList, clear, removeItem, totalToPay} = useContext(CartContext);
 
-    const createOrder = async () =>{
-        let itemsForDB = cartList.map(item => ({
+    const createOrder = () =>{
+        let itemsForDB = cartList.map((item) => ({
             id: item.id,
             title: item.nombre,
             price: item.precio,
             quantity: item.qty,
-        }))
+        }));
         let order = {
             buyer:{
                 name:"Emiliano Martinez",
@@ -34,19 +34,20 @@ const Cart = () => {
             total: totalToPay,
         }
         /* console.log(order) */
-        const newOrderRef = doc(collection(firestoreDB, "orders"))
-        await setDoc(newOrderRef, order);
-        toast.success('Pedido enviado', {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            },);
+        /* const newOrderRef = doc(collection(firestoreDB, "orders")) */
+        addDoc((collection(firestoreDB, "orders")), order).then((resp) => {
+            clear();
+            toast.dark(`Pedido enviado N°: ${resp.id}`, {
+                position: "top-center",
+                autoClose: 60000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+            });
+        });
         /* alert('Su pedido fue enviado con el ID: ' + newOrderRef.id); */
-        clear();
 
         itemsForDB.map(async (item) => {
             const itemRef = doc(firestoreDB, "products", item.id);
@@ -57,13 +58,17 @@ const Cart = () => {
     }
 
     if(cartList.length === 0){
-        return <div className='text-center'>
-            <h3 className='m-5 mt-4 mb-4 text-secondary'>Tu Carrito está vacío 🛒</h3>
-            <Button variant="info" size="sm" className='m-5 mt-0 mb-4 text-white' as={Link} to={`/`}>Seguir comprando</Button>
-        </div>
+        return <>
+                    <ToastContainer />
+                    <div className='text-center'>
+                        <h3 className='m-5 mt-4 mb-4 text-secondary'>Tu Carrito está vacío 🛒</h3>
+                        <Button variant="info" size="sm" className='m-5 mt-0 mb-4 text-white' as={Link} to={`/`}>Seguir comprando</Button>
+                    </div>
+                </>
     }
     return (
         <>
+        <ToastContainer />
         <div className='text-center'>
         <h3 className='m-5 mt-4 mb-4 text-secondary'>Tu Carrito🎀</h3>
         </div>
@@ -110,7 +115,6 @@ const Cart = () => {
                 <div className="vr" />
                 <div className="bg-light">
                     <Button variant="outline-info" size="sm" className='m-1' onClick={createOrder}>Finalizar compra</Button>
-                    <ToastContainer />
                 </div>
                 </Stack>
                 </Row>

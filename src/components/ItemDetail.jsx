@@ -15,9 +15,9 @@ function ItemDetail({id, imagen, nombre, descripcion, edad, genero, stock, preci
     const [enCarrito, setEnCarrito] = useState(false);
     const {addItem} = useContext(CartContext);
     function onAdd(qty){
-        toast.success(`Cargando ${qty} ${nombre} al 🛒`, {
+        toast.dark(`Cargando ${qty} ${nombre} a tu carrito 🛒`, {
             position: "top-center",
-            autoClose: 2000,
+            autoClose: 3000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
