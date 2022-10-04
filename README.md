@@ -152,3 +152,65 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 
 ---
 ⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
+
+![Mira el video](https://github.com/jorjonico/D-M-shop/blob/main/public/logo_final.png?raw=true)
+
+## D&M Odontólogos
+
+Tienda del consultorio odontológico donde comercializa protectores bucales deportivos personalizados. 
+
+Las funcionalidades de la tienda incluyen visualizar el catalogo completo de productos, filtrado por colores(Negro, Amarillo, Rojo, Verde, Gris, Azul, Celeste, Violeta, Rosa) y por último las ofertas. Al seleccionar un producto podemos ver en detalle las características del mismo, en esta instancia podemos seleccionar la cantidad de productos que queremos y enviarla al carrito
+
+## Pre-requisitos
+Necesitas para instalar el software y ejecutarlo el [Visual Studio Code](https://code.visualstudio.com/).
+
+Copiar el link de repositorio y ejecutar el comando
+```bash
+git clone (+ link del repositorio)
+```
+
+## Instalación
+
+Proyecto desarrollado en [React](https://reactjs.org/)
+
+
+
+
+Dependencias necesarias
+
+```bash
+pip install foobar
+```
+
+## Usage
+
+```python
+import foobar
+
+# returns 'words'
+foobar.pluralize('word')
+
+# returns 'geese'
+foobar.pluralize('goose')
+
+# returns 'phenomenon'
+foobar.singularize('phenomena')
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+### Versionado 📌
+Usamos SemVer para el versionado. Para todas las versiones disponibles, mira los tags en este repositorio.
+
+### Autores ✒️
+Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
+
+Andrés Villanueva - Trabajo Inicial - villanuevand
+Fulanito Detal - Documentación - fulanitodetal
+También puedes mirar la lista de todos los contribuyentes quíenes han participado en este proyecto.
