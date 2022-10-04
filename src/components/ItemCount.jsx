@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const ItemCount = ({stock, initial, onAdd}) => {
     const [qty, setqty] = useState(initial); 
 
@@ -17,6 +18,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     ItemCount.number = qty
 
+    if(stock === 0){
+        return <h5 className='ms-3 badge text-bg-info'>Producto SIN STOCK</h5>
+    }
     return (
         <div className="container d-flex align-items-center">
             <Button variant="outline-dark" size="sm" className='m-2' onClick={handleClick}>+</Button> 
