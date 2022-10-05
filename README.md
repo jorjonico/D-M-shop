@@ -1,4 +1,5 @@
-![Mira el video](https://github.com/jorjonico/D-M-shop/blob/main/public/logo_final.png?raw=true)
+![logo](https://github.com/jorjonico/D-M-shop/blob/main/public/logo_final.png?raw=true)<br><br>
+![gif](https://github.com/jorjonico/D-M-shop/blob/entrega7/public/img/reactApp.gif?raw=true)
 
 ## D&M Odontólogos
 
