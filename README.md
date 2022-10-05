@@ -9,7 +9,7 @@ Tienda del consultorio odontológico donde comercializa protectores bucales depo
 Las funcionalidades de la tienda incluyen visualizar el catalogo completo de productos, filtrado por colores(Negro, Amarillo, Rojo, Verde, Gris, Azul, Celeste, Violeta, Rosa) y por ofertas. Al seleccionar un producto podemos ver en detalle las características del mismo, en esta instancia podemos seleccionar la cantidad de productos que queremos y enviarla al carrito
 
 ### Languajes y herramientas:
-[![bootstrap](https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg)](https://getbootstrap.com)
+[![bootstrap](https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg alt="bootstrap" width="20" height="20")](https://getbootstrap.com)
 [![CSS](https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg)](https://www.w3schools.com/css/)
 [![CSS](https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg)](https://www.w3schools.com/css/)
 <br>
