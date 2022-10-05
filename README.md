@@ -25,17 +25,17 @@ Necesitas para instalar el software y ejecutarlo el [Visual Studio Code](https:/
 
 Copiar el link de repositorio y ejecutar el comando
 ```bash
-git clone https://github.com/jorjonico/D-M-shop/tree/main
+git clone https://github.com/jorjonico/D-M-shop.git
 ```
 
 ## Instalación
 
 Proyecto desarrollado en [React](https://reactjs.org/)
 
-Dependencias necesarias
+Luego del clonado del repositorio instalar las dependencias necesarias para el proyecto automaticamente con el comando
 
 ```bash
-pip install foobar
+npm install
 ```
 
 ## Autor ✒️
