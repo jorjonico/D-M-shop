@@ -17,7 +17,7 @@ const App = () => {
               <Route path='/color/:idColor' element={<ItemListContainer />}/>
               <Route path='/item/:id' element={<ItemDetailContainer />}/>
               <Route path='/cart' element={<Cart />}/>
-              <Route path='*'element={<p>404</p>}/>
+              <Route path='*'element={<h3 className='m-5 text-black-50 d-flex justify-content-center'>404</h3>}/>
           </Routes>
       </BrowserRouter>
     </CartContextProvider>
