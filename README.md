@@ -21,7 +21,7 @@ Proyecto integramente desarrollado en React, con Visual Studio Code,<br>las imag
 <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/768px-Visual_Studio_Code_1.35_icon.svg.png" alt="visualstudio" width="40" height="40"/> </a><a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> </p> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://www.adobe.com/in/products/illustrator.html" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="illustrator" width="40" height="40"/> </a>
 
 ## Pre-requisitos
-Necesitas para instalar el software y ejecutarlo el [Visual Studio Code](https://code.visualstudio.com/), con pack [Node.js](https://nodejs.org/es/) previamente instalado
+Necesitas para instalar el software y ejecutarlo en [Visual Studio Code](https://code.visualstudio.com/), con pack [Node.js](https://nodejs.org/es/) previamente instalado
 
 Copiar el link de repositorio y ejecutar el comando
 ```bash
