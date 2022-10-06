@@ -11,7 +11,7 @@ function BasicExample() {
         <Link to='/'>
           <Navbar.Brand>
             <img
-              src="/logo_final.png"
+              src="https://www.ladoweb.com.ar/wp-content/uploads/2022/10/logo_final.png"
               height="50"
               className="d-inline-block align-top"
               alt=""
